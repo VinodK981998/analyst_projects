@@ -1,1 +1,9 @@
+Every dashboard was created using Google Sheets
+Target was to make dashboards after performing basic opertaions on data 
+  1. automationg call IDs 
+  2. setting data validation for call type, agent, city
+dashboards involve 
+- Month wise call data
+- City wise call data
+- Agent summary
 

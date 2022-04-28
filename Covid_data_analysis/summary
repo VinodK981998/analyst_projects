@@ -6,5 +6,10 @@ Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.
 Tools - SQL, POStgres, Excel
 
 working on data cleaning and summarizing data.
-this analysis contains - 
-working on it...
+this analysis contains - two different analysis 1 india specific, world(main)
+Covid 19 Data Exploration 
+
+Skills used: 
+1. data cleaning - filtering invalid data 
+2. creating view for tableau dashbords or any other future visualization 
+3. using tempeorary table creation 

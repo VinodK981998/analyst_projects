@@ -1,21 +1,25 @@
 /*
 Covid 19 Data Exploration 
 
-Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+Skills used: data cleaning - filtering invalid data 
+creating view for tableau dashbords or any other future visualization 
+using tempeorary table creation 
 
 */
 
 Select *
 From covid_data
-Where continent is not null 
+Where continent is not null
+and lower(country) not in ('asia', 'africa', 'europe', 'europian union','north america', 'south america')
 order by 3,4
 
 
--- Select Data that we are going to be starting with
+-- data that is going to be used
 
 Select Location, date, total_cases, new_cases, total_deaths, population
 From covid_data
 Where continent is not null 
+and lower(country) not in ('asia', 'africa', 'europe', 'europian union','north america', 'south america')
 order by 1,2
 
 
@@ -24,8 +28,9 @@ order by 1,2
 
 Select Location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 From covid_data
-Where location like '%states%'
+Where location not like null 
 and continent is not null 
+and lower(country) not in ('asia', 'africa', 'europe', 'europian union','north america', 'south america')
 order by 1,2
 
 
@@ -34,7 +39,9 @@ order by 1,2
 
 Select Location, date, Population, total_cases,  (total_cases/population)*100 as PercentPopulationInfected
 From covid_data
---Where location like '%states%'
+where location not like null 
+and continent is not null 
+and lower(country) not in ('asia', 'africa', 'europe', 'europian union','north america', 'south america')
 order by 1,2
 
 

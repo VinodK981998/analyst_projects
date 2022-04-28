@@ -100,7 +100,7 @@ order by 2,3
 -- Using Temp Table to perform Calculation on Partition By in previous query
 
 DROP Table if exists #PercentPopulationVaccinated
-Create Table PercentPopulationVaccinated
+Create Table #PercentPopulationVaccinated
 (
 Continent nvarchar(255),
 Location nvarchar(255),
@@ -129,7 +129,7 @@ From PercentPopulationVaccinated
 
 -- Creating View to store data for later visualizations
 
-Create View #PercentPopulationVaccinated as
+Create View PercentPopulationVaccinated as
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
 --, (RollingPeopleVaccinated/population)*100
